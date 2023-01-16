@@ -10,14 +10,39 @@ var specialcharacters = ['!','@','#','$','%','^','&','*','(',')','~','<','>'];
 
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate")
+var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
-  var passwordlength = prompt("select password length within 8-128 characters")
+  var passwordlength = prompt("Select password length within 8-128 characters");
   if(passwordlength >= 8 && passwordlength <= 128){
-    
+    confirmChar();
+
   }
 }
+
+function confirmChar(){
+  if (confirm("Include Uppercase?")){
+    charset = charset.concat(uppercase);
+  }
+
+  if (confirm("Include Lowercase?")){
+    charset = charset.concat(lowercase);
+  }
+
+if (confirm("Include Numbers?")){
+    charset = charset.concat(number);
+  }
+
+if (confirm("Include Special Characters?")){
+    charset = charset.concat(specialcharacters?);
+  }
+}
+
+
+
+
+
+
 
 // Write password to the #password                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          rd input
 function writePassword() {
