@@ -1,8 +1,7 @@
 // Assignment code here
+//Arrays and varibles
 var password = '';
 var charset = [];
-
-
 var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
 var number = ['0','1','2','3','4','5','6','7','8','9'];
@@ -25,12 +24,15 @@ function generatePassword(){
 return password;
 }
 
+//Randomizes Array Functions
 function sirMixalot(passwordlength){
   for (var i =0; i < passwordlength; i++ ){
 password += charset[Math.floor(Math.random() * charset.length)]
 }
 return password;
 }
+
+//
 function confirmChar(){
   if (confirm("Include Uppercase?")){
     charset = charset.concat(uppercase);
@@ -55,8 +57,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-  
 }
 
 // Add event listener to generate button
