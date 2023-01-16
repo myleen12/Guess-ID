@@ -16,10 +16,20 @@ function generatePassword(){
   var passwordlength = prompt("Select password length within 8-128 characters");
   if(passwordlength >= 8 && passwordlength <= 128){
     confirmChar();
-
+    sirMixalot(passwordlength);
   }
+  else {
+    alert("Password has to be between 8 - 128 characters");
+  }
+return password;
 }
 
+function sirMixalot(passwordlength){
+  for (var i =0; i < passwordlength; i++ ){
+password += charset[Math.floor(Math.random() * charset.length)]
+}
+return password;
+}
 function confirmChar(){
   if (confirm("Include Uppercase?")){
     charset = charset.concat(uppercase);
@@ -34,15 +44,9 @@ if (confirm("Include Numbers?")){
   }
 
 if (confirm("Include Special Characters?")){
-    charset = charset.concat(specialcharacters?);
+    charset = charset.concat(specialcharacters);
   }
 }
-
-
-
-
-
-
 
 // Write password to the #password                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          rd input
 function writePassword() {
@@ -51,6 +55,7 @@ function writePassword() {
 
   passwordText.value = password;
 
+  alert ("Password Generated")
 }
 
 // Add event listener to generate button
